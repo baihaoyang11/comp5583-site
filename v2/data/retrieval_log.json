@@ -1,0 +1,2107 @@
+{
+  "corpus_chunks": 134,
+  "queries": 26,
+  "log": [
+    {
+      "claim": "mlp_clean",
+      "query": "NumPy MLP test accuracy on clean images",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.4376,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c22",
+          "source": "task1/results/hyperparam_study.json",
+          "path": "learning_rate[2]",
+          "score": 0.1466,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c02",
+          "source": "task1/results/task1_summary.json",
+          "path": "split",
+          "score": 0.1456,
+          "keys": [
+            "random_state",
+            "test",
+            "train",
+            "val"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c11",
+          "source": "task1/results/task1_summary.json",
+          "path": "hyperparam_study.learning_rate[2]",
+          "score": 0.1415,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c20",
+          "source": "task1/results/hyperparam_study.json",
+          "path": "learning_rate[0]",
+          "score": 0.1389,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c35",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.clean.task1"
+      },
+      "value": 0.9275,
+      "value_path": "results.clean.task1.accuracy",
+      "value_raw": 0.9275
+    },
+    {
+      "claim": "mlp_noisy",
+      "query": "NumPy MLP accuracy gaussian noise corrupted test set",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.2571,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c22",
+          "source": "task1/results/hyperparam_study.json",
+          "path": "learning_rate[2]",
+          "score": 0.1605,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c02",
+          "source": "task1/results/task1_summary.json",
+          "path": "split",
+          "score": 0.1594,
+          "keys": [
+            "random_state",
+            "test",
+            "train",
+            "val"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.1591,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c11",
+          "source": "task1/results/task1_summary.json",
+          "path": "hyperparam_study.learning_rate[2]",
+          "score": 0.155,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c37",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.noisy.task1"
+      },
+      "value": 0.9145,
+      "value_path": "results.noisy.task1.accuracy",
+      "value_raw": 0.9145
+    },
+    {
+      "claim": "mlp_rot",
+      "query": "NumPy MLP accuracy rotated corrupted test set",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.2786,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c39",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.rotated.task1",
+          "score": 0.1758,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c38",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.rotated.cnn",
+          "score": 0.1748,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c22",
+          "source": "task1/results/hyperparam_study.json",
+          "path": "learning_rate[2]",
+          "score": 0.174,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c02",
+          "source": "task1/results/task1_summary.json",
+          "path": "split",
+          "score": 0.1728,
+          "keys": [
+            "random_state",
+            "test",
+            "train",
+            "val"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c39",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.rotated.task1"
+      },
+      "value": 0.907,
+      "value_path": "results.rotated.task1.accuracy",
+      "value_raw": 0.907
+    },
+    {
+      "claim": "cnn_clean",
+      "query": "CNN test accuracy clean",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.3082,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c34",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.clean.cnn",
+          "score": 0.2356,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c33",
+          "source": "task2/results/task2_summary.json",
+          "path": "accuracy_drop_vs_clean.cnn",
+          "score": 0.2097,
+          "keys": [
+            "noisy",
+            "rotated"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c35",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.clean.task1",
+          "score": 0.1931,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c32",
+          "source": "task2/results/task2_summary.json",
+          "path": "accuracy_drop_vs_clean.task1",
+          "score": 0.1668,
+          "keys": [
+            "noisy",
+            "rotated"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c34",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.clean.cnn"
+      },
+      "value": 0.96,
+      "value_path": "results.clean.cnn.accuracy",
+      "value_raw": 0.96
+    },
+    {
+      "claim": "cnn_noisy",
+      "query": "CNN test accuracy gaussian noise",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.2751,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.1562,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c34",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.clean.cnn",
+          "score": 0.1412,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c36",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.noisy.cnn",
+          "score": 0.1392,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c38",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.rotated.cnn",
+          "score": 0.1392,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c36",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.noisy.cnn"
+      },
+      "value": 0.9415,
+      "value_path": "results.noisy.cnn.accuracy",
+      "value_raw": 0.9415
+    },
+    {
+      "claim": "cnn_rot",
+      "query": "CNN test accuracy rotation",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.2751,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.1562,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c34",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.clean.cnn",
+          "score": 0.1412,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c36",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.noisy.cnn",
+          "score": 0.1392,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c38",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.rotated.cnn",
+          "score": 0.1392,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c38",
+        "source": "task2/results/task2_summary.json",
+        "path": "results.rotated.cnn"
+      },
+      "value": 0.944,
+      "value_path": "results.rotated.cnn.accuracy",
+      "value_raw": 0.944
+    },
+    {
+      "claim": "digits_n",
+      "query": "how many test images are there",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.1454,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c47",
+          "source": "task3/results/task3_summary.json",
+          "path": "transformer.truncation",
+          "score": 0.1192,
+          "keys": [
+            "max_len",
+            "max_tokens_test",
+            "max_tokens_train",
+            "test_pct",
+            "test_total",
+            "test_truncated",
+            "train_pct",
+            "train_total"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c02",
+          "source": "task1/results/task1_summary.json",
+          "path": "split",
+          "score": 0.1106,
+          "keys": [
+            "random_state",
+            "test",
+            "train",
+            "val"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c106",
+          "source": "task4/results/task4_summary.json",
+          "path": "preregistered_checks[0]",
+          "score": 0.1053,
+          "keys": [
+            "held",
+            "observed",
+            "prediction"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c104",
+          "source": "task4/results/task4_summary.json",
+          "path": "table.focal loss (LLM #1)",
+          "score": 0.1039,
+          "keys": [
+            "test_f1",
+            "train_time_s",
+            "val_f1"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c02",
+        "source": "task1/results/task1_summary.json",
+        "path": "split"
+      },
+      "value": 2000,
+      "value_path": "split.test",
+      "value_raw": 2000
+    },
+    {
+      "claim": "noise_std",
+      "query": "gaussian noise standard deviation",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.1328,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c86",
+          "source": "task3/results/task3_summary.json",
+          "path": "misclassified[1].examples[12]",
+          "score": 0.0649,
+          "keys": [
+            "gold",
+            "idx",
+            "prob",
+            "text",
+            "type"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c29",
+        "source": "task2/results/task2_summary.json",
+        "path": "corruption"
+      },
+      "value": 0.2,
+      "value_path": "corruption.noise_std",
+      "value_raw": 0.2
+    },
+    {
+      "claim": "rot_deg",
+      "query": "rotation degrees applied",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.1878,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c29",
+        "source": "task2/results/task2_summary.json",
+        "path": "corruption"
+      },
+      "value": 15.0,
+      "value_path": "corruption.rotation_deg",
+      "value_raw": 15.0
+    },
+    {
+      "claim": "base_auc",
+      "query": "TF-IDF logistic regression test roc auc",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.2185,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.2165,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c53",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test_at_0.5",
+          "score": 0.2152,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c50",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test",
+          "score": 0.2076,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c49",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_val",
+          "score": 0.1845,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c50",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.baseline_test"
+      },
+      "value": 0.5795830481199937,
+      "value_path": "results.baseline_test.roc_auc",
+      "value_raw": 0.5795830481199937
+    },
+    {
+      "claim": "base_f1",
+      "query": "TF-IDF logistic regression test f1 toxic class",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.1879,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1862,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c53",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test_at_0.5",
+          "score": 0.185,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c50",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test",
+          "score": 0.1785,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c49",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_val",
+          "score": 0.1635,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c50",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.baseline_test"
+      },
+      "value": 0.16447368421052633,
+      "value_path": "results.baseline_test.f1_toxic",
+      "value_raw": 0.16447368421052633
+    },
+    {
+      "claim": "bert_auc",
+      "query": "DistilBERT test roc auc",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.1935,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.1922,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1905,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.1904,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c53",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test_at_0.5",
+          "score": 0.1892,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c51",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.bert_test"
+      },
+      "value": 0.763771300933098,
+      "value_path": "results.bert_test.roc_auc",
+      "value_raw": 0.763771300933098
+    },
+    {
+      "claim": "bert_f1",
+      "query": "DistilBERT test f1 toxic class",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.1635,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.1624,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c104",
+          "source": "task4/results/task4_summary.json",
+          "path": "table.focal loss (LLM #1)",
+          "score": 0.1621,
+          "keys": [
+            "test_f1",
+            "train_time_s",
+            "val_f1"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1609,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.1609,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c51",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.bert_test"
+      },
+      "value": 0.32360902255639096,
+      "value_path": "results.bert_test.f1_toxic",
+      "value_raw": 0.32360902255639096
+    },
+    {
+      "claim": "bert_recall",
+      "query": "DistilBERT test recall toxic class",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c107",
+          "source": "task4/results/task4_summary.json",
+          "path": "preregistered_checks[1]",
+          "score": 0.1899,
+          "keys": [
+            "held",
+            "observed",
+            "prediction"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.158,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.157,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1556,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.1555,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c51",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.bert_test"
+      },
+      "value": 0.8747967479674796,
+      "value_path": "results.bert_test.recall_toxic",
+      "value_raw": 0.8747967479674796
+    },
+    {
+      "claim": "bert_prec",
+      "query": "DistilBERT test precision toxic class",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c106",
+          "source": "task4/results/task4_summary.json",
+          "path": "preregistered_checks[0]",
+          "score": 0.2022,
+          "keys": [
+            "held",
+            "observed",
+            "prediction"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.158,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.157,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1556,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.1555,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c51",
+        "source": "task3/results/task3_summary.json",
+        "path": "results.bert_test"
+      },
+      "value": 0.1985239852398524,
+      "value_path": "results.bert_test.precision_toxic",
+      "value_raw": 0.1985239852398524
+    },
+    {
+      "claim": "tox_rows",
+      "query": "how many test comments and how many are toxic",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c114",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.focal.test",
+          "score": 0.2252,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.2251,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c117",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.sqrt.test",
+          "score": 0.2246,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.2236,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.2215,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c46",
+        "source": "task3/results/task3_summary.json",
+        "path": "dataset.test_multi"
+      },
+      "value": 4000,
+      "value_path": "dataset.test_multi.rows",
+      "value_raw": 4000
+    },
+    {
+      "claim": "tox_pos",
+      "query": "how many toxic examples in the test set",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c114",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.focal.test",
+          "score": 0.1831,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.1831,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c117",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.sqrt.test",
+          "score": 0.1827,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c51",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.bert_test",
+          "score": 0.1818,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c52",
+          "source": "task3/results/task3_summary.json",
+          "path": "results.baseline_test_at_0.5",
+          "score": 0.1802,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c46",
+        "source": "task3/results/task3_summary.json",
+        "path": "dataset.test_multi"
+      },
+      "value": 615,
+      "value_path": "dataset.test_multi.toxic",
+      "value_raw": 615
+    },
+    {
+      "claim": "abl_f1",
+      "query": "unweighted cross entropy test f1 toxic",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.3875,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.3813,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c96",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[2]",
+          "score": 0.3265,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c94",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[0]",
+          "score": 0.3195,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c97",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[3]",
+          "score": 0.3195,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c92",
+        "source": "task3/results/ablation_unweighted.json",
+        "path": "test"
+      },
+      "value": 0.49572649572649574,
+      "value_path": "test.f1_toxic",
+      "value_raw": 0.49572649572649574
+    },
+    {
+      "claim": "abl_auc",
+      "query": "unweighted cross entropy test roc auc",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c92",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test",
+          "score": 0.3836,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c93",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "test_at_0.5",
+          "score": 0.3775,
+          "keys": [
+            "accuracy",
+            "f1_toxic",
+            "n",
+            "n_pred_toxic",
+            "n_true_toxic",
+            "precision_toxic",
+            "recall_toxic",
+            "roc_auc"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c96",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[2]",
+          "score": 0.3732,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c94",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[0]",
+          "score": 0.3652,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c97",
+          "source": "task3/results/ablation_unweighted.json",
+          "path": "history[3]",
+          "score": 0.3652,
+          "keys": [
+            "epoch",
+            "train_loss",
+            "val_auc"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c92",
+        "source": "task3/results/ablation_unweighted.json",
+        "path": "test"
+      },
+      "value": 0.7812357243217927,
+      "value_path": "test.roc_auc",
+      "value_raw": 0.7812357243217927
+    },
+    {
+      "claim": "seed",
+      "query": "what random seed was used",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c02",
+          "source": "task1/results/task1_summary.json",
+          "path": "split",
+          "score": 0.1739,
+          "keys": [
+            "random_state",
+            "test",
+            "train",
+            "val"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c41",
+          "source": "task3/results/task3_summary.json",
+          "path": "split",
+          "score": 0.144,
+          "keys": [
+            "random_state",
+            "stratified",
+            "train",
+            "train_toxic",
+            "val",
+            "val_toxic"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c29",
+          "source": "task2/results/task2_summary.json",
+          "path": "corruption",
+          "score": 0.0964,
+          "keys": [
+            "fill",
+            "generators",
+            "interpolation",
+            "noise_std",
+            "rotation_deg"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c99",
+          "source": "task4/results/task4_summary.json",
+          "path": "setup",
+          "score": 0.086,
+          "keys": [
+            "batch_size",
+            "epochs",
+            "lr",
+            "max_len",
+            "n_test",
+            "n_train",
+            "n_val",
+            "seed"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c98",
+          "source": "task4/results/task4_summary.json",
+          "path": "(root)",
+          "score": 0.0675,
+          "keys": [
+            "hardware",
+            "n_predictions_held",
+            "n_predictions_total",
+            "protocol",
+            "purpose"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c40",
+        "source": "task3/results/task3_summary.json",
+        "path": "(root)"
+      },
+      "value": 42,
+      "value_path": "(root).seed",
+      "value_raw": 42
+    },
+    {
+      "claim": "hw",
+      "query": "what gpu was used for training",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c01",
+          "source": "task1/results/task1_summary.json",
+          "path": "(root)",
+          "score": 0.1452,
+          "keys": [
+            "total_runtime_seconds",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c31",
+          "source": "task2/results/task2_summary.json",
+          "path": "task1",
+          "score": 0.1409,
+          "keys": [
+            "note",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c101",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.sqrt",
+          "score": 0.1168,
+          "keys": [
+            "best_epoch_by_val_auc",
+            "frac_test_above_thr",
+            "hardware",
+            "median_p_test",
+            "median_p_val",
+            "train_time_s",
+            "variant"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c100",
+          "source": "task4/results/task4_summary.json",
+          "path": "variants.focal",
+          "score": 0.1156,
+          "keys": [
+            "best_epoch_by_val_auc",
+            "frac_test_above_thr",
+            "hardware",
+            "median_p_test",
+            "median_p_val",
+            "train_time_s",
+            "variant"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c98",
+          "source": "task4/results/task4_summary.json",
+          "path": "(root)",
+          "score": 0.1115,
+          "keys": [
+            "hardware",
+            "n_predictions_held",
+            "n_predictions_total",
+            "protocol",
+            "purpose"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c40",
+        "source": "task3/results/task3_summary.json",
+        "path": "(root)"
+      },
+      "value": "GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU)",
+      "value_path": "(root).hardware",
+      "value_raw": "GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU)"
+    },
+    {
+      "claim": "epochs",
+      "query": "how many epochs of training",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c30",
+          "source": "task2/results/task2_summary.json",
+          "path": "cnn",
+          "score": 0.1663,
+          "keys": [
+            "architecture",
+            "batch_size",
+            "best_epoch",
+            "early_stopping_patience",
+            "epochs_run",
+            "loss",
+            "lr",
+            "max_epochs"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c01",
+          "source": "task1/results/task1_summary.json",
+          "path": "(root)",
+          "score": 0.1428,
+          "keys": [
+            "total_runtime_seconds",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c31",
+          "source": "task2/results/task2_summary.json",
+          "path": "task1",
+          "score": 0.1385,
+          "keys": [
+            "note",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c03",
+          "source": "task1/results/task1_summary.json",
+          "path": "chosen_hyperparameters",
+          "score": 0.1115,
+          "keys": [
+            "activation",
+            "batch_size",
+            "epochs",
+            "hidden_units",
+            "learning_rate"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c99",
+          "source": "task4/results/task4_summary.json",
+          "path": "setup",
+          "score": 0.0891,
+          "keys": [
+            "batch_size",
+            "epochs",
+            "lr",
+            "max_len",
+            "n_test",
+            "n_train",
+            "n_val",
+            "seed"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c43",
+        "source": "task3/results/task3_summary.json",
+        "path": "transformer"
+      },
+      "value": 4,
+      "value_path": "transformer.epochs",
+      "value_raw": 4
+    },
+    {
+      "claim": "maxlen",
+      "query": "max len tokens before truncation",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c47",
+          "source": "task3/results/task3_summary.json",
+          "path": "transformer.truncation",
+          "score": 0.3002,
+          "keys": [
+            "max_len",
+            "max_tokens_test",
+            "max_tokens_train",
+            "test_pct",
+            "test_total",
+            "test_truncated",
+            "train_pct",
+            "train_total"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c99",
+          "source": "task4/results/task4_summary.json",
+          "path": "setup",
+          "score": 0.1727,
+          "keys": [
+            "batch_size",
+            "epochs",
+            "lr",
+            "max_len",
+            "n_test",
+            "n_train",
+            "n_val",
+            "seed"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c43",
+          "source": "task3/results/task3_summary.json",
+          "path": "transformer",
+          "score": 0.1169,
+          "keys": [
+            "batch_size",
+            "best_epoch_by_val_auc",
+            "checkpoint",
+            "class_imbalance",
+            "epochs",
+            "lr",
+            "max_len",
+            "num_labels"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c46",
+          "source": "task3/results/task3_summary.json",
+          "path": "dataset.test_multi",
+          "score": 0.0499,
+          "keys": [
+            "char_max",
+            "char_mean",
+            "clean",
+            "rows",
+            "toxic",
+            "toxic_ratio"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c45",
+          "source": "task3/results/task3_summary.json",
+          "path": "dataset.train_en",
+          "score": 0.0487,
+          "keys": [
+            "char_max",
+            "char_mean",
+            "clean",
+            "rows",
+            "toxic",
+            "toxic_ratio"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c43",
+        "source": "task3/results/task3_summary.json",
+        "path": "transformer"
+      },
+      "value": 128,
+      "value_path": "transformer.max_len",
+      "value_raw": 128
+    },
+    {
+      "claim": "rt_mlp",
+      "query": "training time seconds cpu for the numpy MLP",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c01",
+          "source": "task1/results/task1_summary.json",
+          "path": "(root)",
+          "score": 0.5751,
+          "keys": [
+            "total_runtime_seconds",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c31",
+          "source": "task2/results/task2_summary.json",
+          "path": "task1",
+          "score": 0.4419,
+          "keys": [
+            "note",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c30",
+          "source": "task2/results/task2_summary.json",
+          "path": "cnn",
+          "score": 0.2209,
+          "keys": [
+            "architecture",
+            "batch_size",
+            "best_epoch",
+            "early_stopping_patience",
+            "epochs_run",
+            "loss",
+            "lr",
+            "max_epochs"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c04",
+          "source": "task1/results/task1_summary.json",
+          "path": "test",
+          "score": 0.103,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c22",
+          "source": "task1/results/hyperparam_study.json",
+          "path": "learning_rate[2]",
+          "score": 0.0998,
+          "keys": [
+            "lr",
+            "val_acc",
+            "val_loss"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c31",
+        "source": "task2/results/task2_summary.json",
+        "path": "task1"
+      },
+      "value": 2.27,
+      "value_path": "task1.training_time_seconds_cpu",
+      "value_raw": 2.27
+    },
+    {
+      "claim": "rt_cnn",
+      "query": "training time seconds cpu for the pytorch CNN",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c31",
+          "source": "task2/results/task2_summary.json",
+          "path": "task1",
+          "score": 0.5295,
+          "keys": [
+            "note",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c01",
+          "source": "task1/results/task1_summary.json",
+          "path": "(root)",
+          "score": 0.4863,
+          "keys": [
+            "total_runtime_seconds",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c30",
+          "source": "task2/results/task2_summary.json",
+          "path": "cnn",
+          "score": 0.2766,
+          "keys": [
+            "architecture",
+            "batch_size",
+            "best_epoch",
+            "early_stopping_patience",
+            "epochs_run",
+            "loss",
+            "lr",
+            "max_epochs"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c34",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.clean.cnn",
+          "score": 0.1592,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c36",
+          "source": "task2/results/task2_summary.json",
+          "path": "results.noisy.cnn",
+          "score": 0.157,
+          "keys": [
+            "accuracy",
+            "macro_f1"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c30",
+        "source": "task2/results/task2_summary.json",
+        "path": "cnn"
+      },
+      "value": 25.03,
+      "value_path": "cnn.training_time_seconds_cpu",
+      "value_raw": 25.03
+    },
+    {
+      "claim": "rt_bert",
+      "query": "train time seconds for distilbert",
+      "top5": [
+        {
+          "rank": 1,
+          "chunk_id": "c01",
+          "source": "task1/results/task1_summary.json",
+          "path": "(root)",
+          "score": 0.3231,
+          "keys": [
+            "total_runtime_seconds",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 2,
+          "chunk_id": "c31",
+          "source": "task2/results/task2_summary.json",
+          "path": "task1",
+          "score": 0.2458,
+          "keys": [
+            "note",
+            "training_time_seconds_cpu"
+          ]
+        },
+        {
+          "rank": 3,
+          "chunk_id": "c104",
+          "source": "task4/results/task4_summary.json",
+          "path": "table.focal loss (LLM #1)",
+          "score": 0.1609,
+          "keys": [
+            "test_f1",
+            "train_time_s",
+            "val_f1"
+          ]
+        },
+        {
+          "rank": 4,
+          "chunk_id": "c105",
+          "source": "task4/results/task4_summary.json",
+          "path": "table.sqrt weights (LLM #2)",
+          "score": 0.1593,
+          "keys": [
+            "test_f1",
+            "train_time_s",
+            "val_f1"
+          ]
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c103",
+          "source": "task4/results/task4_summary.json",
+          "path": "table.unweighted CE (existing ablation)",
+          "score": 0.1539,
+          "keys": [
+            "test_f1",
+            "train_time_s",
+            "val_f1"
+          ]
+        }
+      ],
+      "chosen": {
+        "chunk_id": "c43",
+        "source": "task3/results/task3_summary.json",
+        "path": "transformer"
+      },
+      "value": 147.58,
+      "value_path": "transformer.train_time_s",
+      "value_raw": 147.58
+    }
+  ],
+  "failures": []
+}

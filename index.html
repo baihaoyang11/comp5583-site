@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>haku — versions 0, 1, 2</title>
+<style>
+  :root {
+    --bg: #F6F4ED; --ink: #1C1A16; --muted: #6E6759; --line: #DAD4C4; --accent: #8A3E1E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14130F; --ink: #EDE8DC; --muted: #9A9384; --line: #302D25; --accent: #C97A50; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 14vh 24px 12vh; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 40px;
+       letter-spacing: -0.02em; margin: 0 0 10px; }
+  p.lead { color: var(--muted); margin: 0 0 40px; max-width: 46ch; }
+  ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  li { border-bottom: 1px solid var(--line); }
+  a { color: inherit; text-decoration: none; display: flex; gap: 18px; align-items: baseline;
+      padding: 20px 0; }
+  a:hover .name, a:focus-visible .name { color: var(--accent); }
+  .tag { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
+         letter-spacing: 0.08em; color: var(--accent); min-width: 34px; }
+  .name { font-size: 19px; }
+  .note { color: var(--muted); font-size: 14px; margin-left: auto; text-align: right; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 520px) {
+    body { padding-top: 10vh; }
+    h1 { font-size: 32px; }
+    a { flex-wrap: wrap; gap: 4px 14px; }
+    .note { margin-left: 0; width: 100%; text-align: left; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>haku</h1>
+  <p class="lead">One personal website in three versions. Each version is a
+    complete, self-contained page; the differences between them are described in
+    the report.</p>
+  <ol>
+    <li><a href="v0/"><span class="tag">V0</span><span class="name">Baseline</span><span class="note">as built, then frozen</span></a></li>
+    <li><a href="v1/"><span class="tag">V1</span><span class="name">In-context learning</span><span class="note">contents rewritten from worked examples</span></a></li>
+    <li><a href="v2/"><span class="tag">V2</span><span class="name">Retrieval-augmented generation</span><span class="note">claims traced to retrieved evidence</span></a></li>
+  </ol>
+  <footer>No tracking, no cookies, no external requests.</footer>
+</main>
+</body>
+</html>

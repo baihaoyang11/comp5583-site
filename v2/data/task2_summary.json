@@ -1,0 +1,83 @@
+{
+  "hardware": {
+    "device": "CPU",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "cores": 14,
+    "threads": 20,
+    "gpu_present": "RTX 3070 Ti Laptop 8GB (unused for this task)",
+    "torch": "2.8.0+cpu"
+  },
+  "split": {
+    "train": 1600,
+    "val": 400,
+    "test": 2000,
+    "source": "task1/results/split_indices.npz"
+  },
+  "corruption": {
+    "noise_std": 0.2,
+    "rotation_deg": 15.0,
+    "interpolation": "bilinear",
+    "fill": 0.0,
+    "generators": "two independent numpy default_rng, both seed=42"
+  },
+  "cnn": {
+    "architecture": "conv16-3x3 -> relu -> maxpool2 -> conv32-3x3 -> relu -> maxpool2 -> fc128 -> relu -> dropout0.3 -> fc10",
+    "parameters": 206922,
+    "loss": "cross-entropy",
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "early_stopping_patience": 10,
+    "best_epoch": 33,
+    "epochs_run": 43,
+    "training_time_seconds_cpu": 25.03
+  },
+  "task1": {
+    "training_time_seconds_cpu": 2.27,
+    "note": "trained in Task I, loaded here for inference only"
+  },
+  "results": {
+    "clean": {
+      "cnn": {
+        "accuracy": 0.96,
+        "macro_f1": 0.9599953878113933
+      },
+      "task1": {
+        "accuracy": 0.9275,
+        "macro_f1": 0.9273795732922977
+      }
+    },
+    "noisy": {
+      "cnn": {
+        "accuracy": 0.9415,
+        "macro_f1": 0.9416692136709874
+      },
+      "task1": {
+        "accuracy": 0.9145,
+        "macro_f1": 0.914909460825462
+      }
+    },
+    "rotated": {
+      "cnn": {
+        "accuracy": 0.944,
+        "macro_f1": 0.9439659116008796
+      },
+      "task1": {
+        "accuracy": 0.907,
+        "macro_f1": 0.9070037688375103
+      }
+    }
+  },
+  "accuracy_drop_vs_clean": {
+    "task1": {
+      "noisy": 0.013,
+      "rotated": 0.0205
+    },
+    "cnn": {
+      "noisy": 0.0185,
+      "rotated": 0.016
+    }
+  },
+  "total_runtime_seconds": 33.05
+}

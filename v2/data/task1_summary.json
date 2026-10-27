@@ -1,0 +1,84 @@
+{
+  "split": {
+    "train": 1600,
+    "val": 400,
+    "test": 2000,
+    "random_state": 42
+  },
+  "chosen_hyperparameters": {
+    "hidden_units": 128,
+    "learning_rate": 0.5,
+    "activation": "relu",
+    "batch_size": 32,
+    "epochs": 50
+  },
+  "test": {
+    "accuracy": 0.9275,
+    "macro_f1": 0.9273795732922977
+  },
+  "training_time_seconds_cpu": 2.27,
+  "total_runtime_seconds": 37.85,
+  "hyperparam_study": {
+    "hidden_units": [
+      {
+        "hidden": 32,
+        "val_acc": 0.89,
+        "val_loss": 0.40848627515385194
+      },
+      {
+        "hidden": 64,
+        "val_acc": 0.9075,
+        "val_loss": 0.35769543482403293
+      },
+      {
+        "hidden": 128,
+        "val_acc": 0.915,
+        "val_loss": 0.3282126339211993
+      },
+      {
+        "hidden": 256,
+        "val_acc": 0.905,
+        "val_loss": 0.3298035032533581
+      }
+    ],
+    "learning_rate": [
+      {
+        "lr": 0.01,
+        "val_acc": 0.9,
+        "val_loss": 0.3501284826162181
+      },
+      {
+        "lr": 0.05,
+        "val_acc": 0.905,
+        "val_loss": 0.32609155688802605
+      },
+      {
+        "lr": 0.1,
+        "val_acc": 0.915,
+        "val_loss": 0.3282126339211993
+      },
+      {
+        "lr": 0.5,
+        "val_acc": 0.935,
+        "val_loss": 0.25751446868603184
+      }
+    ],
+    "activation": [
+      {
+        "activation": "relu",
+        "val_acc": 0.915,
+        "val_loss": 0.3282126339211993
+      },
+      {
+        "activation": "tanh",
+        "val_acc": 0.905,
+        "val_loss": 0.3605727973700947
+      },
+      {
+        "activation": "sigmoid",
+        "val_acc": 0.9,
+        "val_loss": 0.3111520135125446
+      }
+    ]
+  }
+}

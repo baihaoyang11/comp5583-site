@@ -1,0 +1,65 @@
+{
+  "variant": "unweighted CrossEntropyLoss (ablation)",
+  "everything_else": "identical to task3_toxicity.py (split, arch, lr, batch, epochs, schedule, seed)",
+  "hardware": "GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU)",
+  "train_time_s": 147.01,
+  "best_epoch_by_val_auc": 3,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.33412483177862445,
+      "val_auc": 0.8705713465403389
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.17429344903602695,
+      "val_auc": 0.8891185759402814
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.11680608635697455,
+      "val_auc": 0.9262704565030146
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0747257209053759,
+      "val_auc": 0.9258685041630778
+    }
+  ],
+  "val": {
+    "n": 448,
+    "threshold": 0.062098750844597816,
+    "roc_auc": 0.9262704565030146,
+    "precision_toxic": 0.7,
+    "recall_toxic": 0.6511627906976745,
+    "f1_toxic": 0.6746987951807228,
+    "accuracy": 0.9397321428571429,
+    "n_pred_toxic": 40,
+    "n_true_toxic": 43
+  },
+  "test": {
+    "n": 4000,
+    "threshold": 0.062098750844597816,
+    "roc_auc": 0.7812357243217927,
+    "precision_toxic": 0.47470238095238093,
+    "recall_toxic": 0.5186991869918699,
+    "f1_toxic": 0.49572649572649574,
+    "accuracy": 0.83775,
+    "n_pred_toxic": 672,
+    "n_true_toxic": 615
+  },
+  "test_at_0.5": {
+    "n": 4000,
+    "threshold": 0.5,
+    "roc_auc": 0.7812357243217927,
+    "precision_toxic": 0.6355555555555555,
+    "recall_toxic": 0.23252032520325203,
+    "f1_toxic": 0.3404761904761905,
+    "accuracy": 0.8615,
+    "n_pred_toxic": 225,
+    "n_true_toxic": 615
+  },
+  "median_p_val": 0.005578110925853252,
+  "median_p_test": 0.019243519753217697,
+  "frac_test_above_thr": 0.168
+}

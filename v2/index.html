@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>haku — agentic AI systems (V2, cited)</title>
+<meta name="description" content="haku: MSc student in Agentic AI Systems at The Hong Kong Polytechnic University. Two projects, one shipped, one proposed.">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top">haku</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-pressed="false">
+      <span class="theme-dot" aria-hidden="true"></span><span id="theme-label">Dark</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="home-h">
+    <div class="wrap">
+      <p class="eyebrow">MSc Agentic AI Systems · PolyU</p>
+      <h1 id="home-h">haku</h1>
+      <p class="tagline">I build small systems that learn, and I care more about
+        why they fail than how large they are.</p>
+      <p class="hero-links">
+        <a href="#projects">See the projects</a>
+        <span aria-hidden="true">·</span>
+        <a href="#about">Read the background</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 id="about-h"><span class="num">01</span>About</h2>
+
+      <div class="block">
+        <h3 class="label">Education</h3>
+        <p class="lead">MSc in Agentic AI Systems, The Hong Kong Polytechnic
+          University — 2026 to 2027.</p>
+      </div>
+
+      <div class="block">
+        <h3 class="label">Interests</h3>
+        <p>I came into this programme from the engineering side, and the part I
+          actually enjoy is what happens after the demo works: finding out why it
+          stops working when the data changes. At the moment that means retrieval
+          systems whose answers can be checked against the passage they came from,
+          evaluation that still means something on a different dataset, and the
+          unglamorous work of making a model usable by someone who did not write
+          it.</p>
+        <p>Everything I know about this came from coursework I had to debug
+          myself, so I trust a small experiment I can rerun more than a large
+          claim I cannot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h"><span class="num">02</span>Projects</h2>
+
+      <article class="project" aria-labelledby="p1-h">
+        <div class="p-head">
+          <span class="chip">Coursework</span>
+          <h3 id="p1-h">Four models, two datasets — and where every number came from</h3>
+        </div>
+        <p class="p-purpose">Four models that are usually described separately,
+          run under one protocol each: on Digits4000 a hand-written NumPy MLP and
+          a PyTorch CNN, on multilingual toxicity a TF-IDF + logistic regression
+          baseline and a fine-tuned multilingual DistilBERT. Every figure on this
+          page was retrieved from a result file by a small retriever rather than
+          typed from my notes; the citation next to each one names the chunk it
+          came from.</p>
+        <p class="p-role"><span class="label-inline">My contribution.</span>
+          Wrote the MLP and its backward pass by hand with no automatic
+          differentiation, built the two corrupted test suites, ran the DistilBERT
+          fine-tuning and the threshold protocol, ran the loss ablation, and wrote
+          the retriever that produced the citations on this page.</p>
+
+        <button class="disclose" type="button" aria-expanded="true" aria-controls="p1-more">
+          <span class="disclose-sign" aria-hidden="true">−</span>
+          <span class="disclose-text">Results</span>
+        </button>
+        <div class="p-more" id="p1-more">
+          <p class="label-inline">Digits4000, 2000 test images</p>
+          <table class="scores">
+            <caption class="sr-only">Test accuracy of the digit models, clean and on two corrupted test sets, with a source citation per figure</caption>
+            <thead>
+              <tr><th scope="col">Model</th><th scope="col">Clean</th><th scope="col">Noisy</th><th scope="col">Rotated</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">NumPy MLP</th><td>0.9275</td><td>0.9145</td><td>0.9070</td></tr>
+              <tr><th scope="row">PyTorch CNN</th><td>0.9600</td><td>0.9415</td><td>0.9440</td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Sources for the table, in column order — MLP
+            <sup class="cite"><a href="data/task2_summary.json" title="c35 · results.clean.task1.accuracy · task2_summary">c35</a></sup> · <sup class="cite"><a href="data/task2_summary.json" title="c37 · results.noisy.task1.accuracy · task2_summary">c37</a></sup> · <sup class="cite"><a href="data/task2_summary.json" title="c39 · results.rotated.task1.accuracy · task2_summary">c39</a></sup>; CNN <sup class="cite"><a href="data/task2_summary.json" title="c34 · results.clean.cnn.accuracy · task2_summary">c34</a></sup> · <sup class="cite"><a href="data/task2_summary.json" title="c36 · results.noisy.cnn.accuracy · task2_summary">c36</a></sup> · <sup class="cite"><a href="data/task2_summary.json" title="c38 · results.rotated.cnn.accuracy · task2_summary">c38</a></sup>. The corrupted suites use Gaussian noise
+            with a standard deviation of 0.2 and rotation of 15
+            degrees. Neither model was retrained on corrupted data, so the drop
+            measures robustness. The CNN loses 0.0185 to noise against the MLP's
+            0.0130, and 0.0160 to rotation against 0.0205 — the same two numbers,
+            ranked the opposite way, which is why the table has both columns.</p>
+
+          <p class="label-inline">Multilingual toxicity</p>
+          <p>The other two models were not on digits, so they have no place in
+            that table. On 4000 test comments, 615 of them toxic,
+            TF-IDF with logistic regression reached a ROC-AUC of 0.5796<sup class="cite"><a href="data/task3_summary.json" title="c50 · results.baseline_test.roc_auc · task3_summary">c50</a></sup>
+            and an F1 of 0.1645<sup class="cite"><a href="data/task3_summary.json" title="c50 · results.baseline_test.f1_toxic · task3_summary">c50</a></sup> on the toxic class; the fine-tuned
+            multilingual DistilBERT reached 0.7638<sup class="cite"><a href="data/task3_summary.json" title="c51 · results.bert_test.roc_auc · task3_summary">c51</a></sup> and
+            0.3236<sup class="cite"><a href="data/task3_summary.json" title="c51 · results.bert_test.f1_toxic · task3_summary">c51</a></sup>. Then the part that matters: dropping the
+            inverse-frequency class weighting lifted that F1 to 0.4957<sup class="cite"><a href="data/ablation_unweighted.json" title="c92 · test.f1_toxic · ablation_unweighted">c92</a></sup>
+            and the AUC to 0.7812<sup class="cite"><a href="data/ablation_unweighted.json" title="c92 · test.roc_auc · ablation_unweighted">c92</a></sup>.</p>
+          <p class="fine">So the weighted model I shipped was the worse one. It
+            reached recall 0.8748<sup class="cite"><a href="data/task3_summary.json" title="c51 · results.bert_test.recall_toxic · task3_summary">c51</a></sup> at precision
+            0.1985<sup class="cite"><a href="data/task3_summary.json" title="c51 · results.bert_test.precision_toxic · task3_summary">c51</a></sup> — it moved the operating point rather than
+            improving the classifier, and F1 fell because of it. Threshold fixed
+            on the English validation set in every run, never on the test set.</p>
+
+          <p class="fine">Training ran on GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU), seed 42, with comments
+            truncated at 128 tokens and 4 epochs; the MLP took
+            2.27 s, the CNN 25.03 s and DistilBERT 147.58 s. Every
+            figure in this paragraph and the two above is a chunk read out of a
+            result file at build time — the build fails if a value cannot be
+            retrieved, so a number on this page cannot be stale.</p>
+        </div>
+
+        <button class="disclose" type="button" aria-expanded="false" aria-controls="p1-src">
+          <span class="disclose-sign" aria-hidden="true">+</span>
+          <span class="disclose-text">Sources — 26 retrieved chunks</span>
+        </button>
+        <div class="p-more" id="p1-src" hidden>
+          <p class="fine">Each line is one chunk: its id, the result file it was
+            cut from (the link opens the file), what the value is, the value
+            itself, and the JSON path it sits at. The retrieval log — every
+            query, its top five candidates and the scores — is published as
+            <a href="data/retrieval_log.json">retrieval_log.json</a>.</p>
+          <p class="fine">c35 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;NumPy MLP, clean test accuracy <b>0.9275</b> &nbsp;<span>results.clean.task1.accuracy</span></p>
+          <p class="fine">c37 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;NumPy MLP, Gaussian-noise test accuracy <b>0.9145</b> &nbsp;<span>results.noisy.task1.accuracy</span></p>
+          <p class="fine">c39 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;NumPy MLP, rotated test accuracy <b>0.907</b> &nbsp;<span>results.rotated.task1.accuracy</span></p>
+          <p class="fine">c34 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;PyTorch CNN, clean test accuracy <b>0.96</b> &nbsp;<span>results.clean.cnn.accuracy</span></p>
+          <p class="fine">c36 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;PyTorch CNN, Gaussian-noise test accuracy <b>0.9415</b> &nbsp;<span>results.noisy.cnn.accuracy</span></p>
+          <p class="fine">c38 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;PyTorch CNN, rotated test accuracy <b>0.944</b> &nbsp;<span>results.rotated.cnn.accuracy</span></p>
+          <p class="fine">c02 &nbsp;<a href="data/task1_summary.json">task1_summary.json</a> &nbsp;test images in the digit split <b>2000</b> &nbsp;<span>split.test</span></p>
+          <p class="fine">c29 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;noise level used for the corrupted suite <b>0.2</b> &nbsp;<span>corruption.noise_std</span></p>
+          <p class="fine">c29 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;rotation used for the corrupted suite <b>15</b> &nbsp;<span>corruption.rotation_deg</span></p>
+          <p class="fine">c50 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;TF-IDF + logistic regression, test ROC-AUC <b>0.5796</b> &nbsp;<span>results.baseline_test.roc_auc</span></p>
+          <p class="fine">c50 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;TF-IDF + logistic regression, test F1 on toxic <b>0.1645</b> &nbsp;<span>results.baseline_test.f1_toxic</span></p>
+          <p class="fine">c51 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;DistilBERT (weighted), test ROC-AUC <b>0.7638</b> &nbsp;<span>results.bert_test.roc_auc</span></p>
+          <p class="fine">c51 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;DistilBERT (weighted), test F1 on toxic <b>0.3236</b> &nbsp;<span>results.bert_test.f1_toxic</span></p>
+          <p class="fine">c51 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;DistilBERT (weighted), test recall on toxic <b>0.8748</b> &nbsp;<span>results.bert_test.recall_toxic</span></p>
+          <p class="fine">c51 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;DistilBERT (weighted), test precision on toxic <b>0.1985</b> &nbsp;<span>results.bert_test.precision_toxic</span></p>
+          <p class="fine">c46 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;test comments in the toxicity split <b>4000</b> &nbsp;<span>dataset.test_multi.rows</span></p>
+          <p class="fine">c46 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;of which labelled toxic <b>615</b> &nbsp;<span>dataset.test_multi.toxic</span></p>
+          <p class="fine">c92 &nbsp;<a href="data/ablation_unweighted.json">ablation_unweighted.json</a> &nbsp;DistilBERT (unweighted), test F1 on toxic <b>0.4957</b> &nbsp;<span>test.f1_toxic</span></p>
+          <p class="fine">c92 &nbsp;<a href="data/ablation_unweighted.json">ablation_unweighted.json</a> &nbsp;DistilBERT (unweighted), test ROC-AUC <b>0.7812</b> &nbsp;<span>test.roc_auc</span></p>
+          <p class="fine">c40 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;random seed <b>42</b> &nbsp;<span>(root).seed</span></p>
+          <p class="fine">c40 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;hardware <b>GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU)</b> &nbsp;<span>(root).hardware</span></p>
+          <p class="fine">c43 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;epochs <b>4</b> &nbsp;<span>transformer.epochs</span></p>
+          <p class="fine">c43 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;maximum tokens per comment <b>128</b> &nbsp;<span>transformer.max_len</span></p>
+          <p class="fine">c31 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;MLP training time <b>2.27</b> &nbsp;<span>task1.training_time_seconds_cpu</span></p>
+          <p class="fine">c30 &nbsp;<a href="data/task2_summary.json">task2_summary.json</a> &nbsp;CNN training time <b>25.03</b> &nbsp;<span>cnn.training_time_seconds_cpu</span></p>
+          <p class="fine">c43 &nbsp;<a href="data/task3_summary.json">task3_summary.json</a> &nbsp;DistilBERT training time <b>147.58</b> &nbsp;<span>transformer.train_time_s</span></p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p2-h">
+        <div class="p-head">
+          <span class="chip chip-proposed">Proposed</span>
+          <h3 id="p2-h">Citation-first Q&amp;A over course notes</h3>
+        </div>
+        <p class="p-purpose">The same idea applied to reading: answer questions
+          over my own lecture PDFs so that every sentence in the answer points at
+          the passage it came from. The retriever above already does this on six
+          JSON files, which is how I know the hard part is not the retrieval.</p>
+        <p class="p-role"><span class="label-inline">Planned contribution.</span>
+          Chunking by section heading, hybrid BM25 + dense retrieval, and a
+          40-question evaluation set built from questions I have actually asked.
+          Measure citation precision with and without retrieval, so the retrieval
+          step has to justify itself.</p>
+
+        <button class="disclose" type="button" aria-expanded="true" aria-controls="p2-more">
+          <span class="disclose-sign" aria-hidden="true">−</span>
+          <span class="disclose-text">Why it is proposed, not built</span>
+        </button>
+        <div class="p-more" id="p2-more">
+          <p>Because the evaluation set is the part I have not finished. A
+            retrieval demo without a fixed question set only shows that retrieval
+            returns something; it cannot show that the returned passage is the one
+            that supports the answer. The version above is a weak form of the
+            test: 26 questions, 26 resolved, but I chose the questions knowing
+            the answers were in the corpus, which is not the same as being hard
+            to find.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h"><span class="num">03</span>Contact</h2>
+      <p class="lead"><a class="mail" href="mailto:2654808130@qq.com">2654808130@qq.com</a></p>
+      <p class="muted">Email is the only channel I monitor. I answer questions
+        about the projects above, and I am happy to be told that a number in them
+        is wrong.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <span>haku</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>V2</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

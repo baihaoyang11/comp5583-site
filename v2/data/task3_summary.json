@@ -1,0 +1,454 @@
+{
+  "hardware": "GPU (NVIDIA GeForce RTX 3070 Ti Laptop GPU)",
+  "torch_version": "2.8.0+cu126",
+  "cuda_build": "12.6",
+  "python": "3.13.5",
+  "seed": 42,
+  "dataset": {
+    "train_en": {
+      "rows": 2236,
+      "cols": [
+        "comment_text",
+        "toxic"
+      ],
+      "toxic": 214,
+      "clean": 2022,
+      "toxic_ratio": 0.09570661896243292,
+      "char_mean": 387.86672629695886,
+      "char_max": 4992
+    },
+    "test_multi": {
+      "rows": 4000,
+      "cols": [
+        "comment_text",
+        "toxic"
+      ],
+      "toxic": 615,
+      "clean": 3385,
+      "toxic_ratio": 0.15375,
+      "char_mean": 373.6285,
+      "char_max": 1785
+    },
+    "toxic_ratio_gap_pp": 5.804338103756708
+  },
+  "split": {
+    "train": 1788,
+    "val": 448,
+    "train_toxic": 171,
+    "val_toxic": 43,
+    "random_state": 42,
+    "stratified": true
+  },
+  "preprocessing": "light: whitespace/newline normalisation only (no lowercasing, no stop-words, no punctuation stripping)",
+  "baseline": {
+    "model": "TF-IDF (1-2 grams, min_df=2, sublinear_tf) + LogisticRegression",
+    "class_weight": "balanced",
+    "C": 1.0,
+    "solver": "liblinear",
+    "vocab_size": 15060,
+    "fit_time_s": 0.86,
+    "test_docs_zero_in_vocab": 98,
+    "test_zero_in_vocab_ratio": 0.0245,
+    "threshold": 0.43435687694701886,
+    "val_f1_at_chosen_threshold": 0.6373626373626373
+  },
+  "transformer": {
+    "checkpoint": "distilbert-base-multilingual-cased",
+    "num_labels": 2,
+    "max_len": 128,
+    "truncation": {
+      "max_len": 128,
+      "train_truncated": 368,
+      "train_total": 1788,
+      "val_truncated": 78,
+      "val_total": 448,
+      "test_truncated": 1151,
+      "test_total": 4000,
+      "train_pct": 20.58165548098434,
+      "val_pct": 17.410714285714285,
+      "test_pct": 28.775,
+      "max_tokens_train": 2142,
+      "max_tokens_test": 575
+    },
+    "lr": 2e-05,
+    "batch_size": 16,
+    "epochs": 4,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "optimizer": "AdamW",
+    "class_imbalance": "weighted CrossEntropyLoss, w_c = N/(2*N_c); clean 0.553 / toxic 5.228",
+    "best_epoch_by_val_auc": 3,
+    "train_time_s": 147.58,
+    "threshold": 0.04278365150094032,
+    "val_f1_at_chosen_threshold": 0.6464646464646465,
+    "history": {
+      "epoch": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "train_loss": [
+        0.5856460367539852,
+        0.41710778052441494,
+        0.2896009657398633,
+        0.18130417852360398
+      ],
+      "val_auc": [
+        0.8570198105081825,
+        0.8859029572207866,
+        0.9156474303761126,
+        0.9064025265575653
+      ],
+      "val_f1_at_05": [
+        0.46601941747572817,
+        0.5675675675675675,
+        0.5526315789473685,
+        0.5526315789473685
+      ],
+      "val_loss": [
+        0.3099137299827167,
+        0.2431221061519214,
+        0.23985204127218043,
+        0.27239732277978745
+      ]
+    }
+  },
+  "results": {
+    "baseline_val": {
+      "n": 448,
+      "threshold": 0.43435687694701886,
+      "roc_auc": 0.9389606660924491,
+      "precision_toxic": 0.6041666666666666,
+      "recall_toxic": 0.6744186046511628,
+      "f1_toxic": 0.6373626373626373,
+      "accuracy": 0.9263392857142857,
+      "n_pred_toxic": 48,
+      "n_true_toxic": 43
+    },
+    "bert_val": {
+      "n": 448,
+      "threshold": 0.04278365150094032,
+      "roc_auc": 0.9156474303761126,
+      "precision_toxic": 0.5714285714285714,
+      "recall_toxic": 0.7441860465116279,
+      "f1_toxic": 0.6464646464646465,
+      "accuracy": 0.921875,
+      "n_pred_toxic": 56,
+      "n_true_toxic": 43
+    },
+    "baseline_test": {
+      "n": 4000,
+      "threshold": 0.43435687694701886,
+      "roc_auc": 0.5795830481199937,
+      "precision_toxic": 0.25252525252525254,
+      "recall_toxic": 0.12195121951219512,
+      "f1_toxic": 0.16447368421052633,
+      "accuracy": 0.8095,
+      "n_pred_toxic": 297,
+      "n_true_toxic": 615
+    },
+    "bert_test": {
+      "n": 4000,
+      "threshold": 0.04278365150094032,
+      "roc_auc": 0.763771300933098,
+      "precision_toxic": 0.1985239852398524,
+      "recall_toxic": 0.8747967479674796,
+      "f1_toxic": 0.32360902255639096,
+      "accuracy": 0.43775,
+      "n_pred_toxic": 2710,
+      "n_true_toxic": 615
+    },
+    "baseline_test_at_0.5": {
+      "n": 4000,
+      "threshold": 0.5,
+      "roc_auc": 0.5795830481199937,
+      "precision_toxic": 0.3333333333333333,
+      "recall_toxic": 0.024390243902439025,
+      "f1_toxic": 0.045454545454545456,
+      "accuracy": 0.8425,
+      "n_pred_toxic": 45,
+      "n_true_toxic": 615
+    },
+    "bert_test_at_0.5": {
+      "n": 4000,
+      "threshold": 0.5,
+      "roc_auc": 0.763771300933098,
+      "precision_toxic": 0.579088471849866,
+      "recall_toxic": 0.35121951219512193,
+      "f1_toxic": 0.43724696356275305,
+      "accuracy": 0.861,
+      "n_pred_toxic": 373,
+      "n_true_toxic": 615
+    }
+  },
+  "calibration_shift": {
+    "bert_val": {
+      "mean": 0.08542381227016449,
+      "median": 0.012106301262974739,
+      "frac_gt_0.5": 0.07366071428571429,
+      "mean_clean": 0.040984176099300385,
+      "mean_toxic": 0.503983199596405
+    },
+    "bert_test": {
+      "mean": 0.16584494709968567,
+      "median": 0.07585018873214722,
+      "frac_gt_0.5": 0.09325,
+      "mean_clean": 0.12225581705570221,
+      "mean_toxic": 0.40576237440109253
+    },
+    "baseline_val": {
+      "mean": 0.26914822306865815,
+      "median": 0.2329046063684381,
+      "frac_gt_0.5": 0.06919642857142858,
+      "mean_clean": 0.2371233557792735,
+      "mean_toxic": 0.5707777870733277
+    },
+    "baseline_test": {
+      "mean": 0.35338540228837434,
+      "median": 0.3567332130234794,
+      "frac_gt_0.5": 0.01125,
+      "mean_clean": 0.35069928634931197,
+      "mean_toxic": 0.36816995912370126
+    },
+    "frac_test_above_bert_threshold": 0.6775,
+    "frac_val_above_bert_threshold": 0.125
+  },
+  "misclassified": [
+    {
+      "model": "TF-IDF + LogReg",
+      "examples": [
+        {
+          "type": "false_positive",
+          "idx": 2851,
+          "gold": 0,
+          "prob": 0.822095717850552,
+          "text": "Merhaba Handsome128, Oluşturmuş olduğunuz Fuck My Bitch adlı sayfa, Vikipedi nin hızlı silme kriterlerinden g3 uyarınca silinmeye aday gösterilmiştir. Sayfanın silinmeye neden aday gösterildiği ile ilgili daha fazla bilgi almak için, ilgili kriterde verilen açıklamaları okumanız önerilir. Bu uyarıyı gördüğünüzde sayfa silinmiş olabilir. Eğer sayfanızı bulamıyorsanız silme kayıtlarını kontrol edebi"
+        },
+        {
+          "type": "false_positive",
+          "idx": 3443,
+          "gold": 0,
+          "prob": 0.7015386831813984,
+          "text": "mehmet yıldırım 1978 muş malazgirt doğumludur, 7 yaşında iken gaziantep merkez e taşındı, şu an istanbulda ikamet etmektedir. mekselina@live.nl İlerde eklemel yapılacaktır."
+        },
+        {
+          "type": "false_positive",
+          "idx": 3196,
+          "gold": 0,
+          "prob": 0.5793429661772741,
+          "text": "What a Wonderful World maddenizi gördüm. Belki Louis Armstrong maddeside ilginizi çeker henüz fırında pişiyor gerçi. hmmm bunu konuşmuşmuyduk yoksa?Kutu su"
+        },
+        {
+          "type": "false_positive",
+          "idx": 915,
+          "gold": 0,
+          "prob": 0.5759007723391201,
+          "text": "Tu edición en Verruga genital ha sido considerada como vandalismo y ha sido revertida por un robot automáticamente (ver diff). No insistas en hacer ediciones como ésta o serás bloqueado."
+        },
+        {
+          "type": "false_positive",
+          "idx": 330,
+          "gold": 0,
+          "prob": 0.568487054467142,
+          "text": "Hola Ecemaml: Ha vuelto la IP latosa a Tito Puente, con los mismos cambios que se reviriteron en su momento. Ha avisado a Miss Manzana pero parece que no está activa ahora mismo. Echa un vistazo, por favor, yo ya no quiero seguir revirtiendo reversiones. Un saludo. Gracias."
+        },
+        {
+          "type": "false_positive",
+          "idx": 925,
+          "gold": 0,
+          "prob": 0.5645411614227857,
+          "text": "Ya he visto que me ha respondido en su propia página. Esperaba una respuesta en la mía. Le he vuelto a mandar otro privado. A ver que me responde. Saludos. Dr"
+        },
+        {
+          "type": "false_positive",
+          "idx": 306,
+          "gold": 0,
+          "prob": 0.5535075285843073,
+          "text": "Se debe de agregar a sus datos personales que el Hombre es decididamente gay ya que su defensa mas fuerte, es sin duda alguna el toqueteo homosexual a los genitales de los atacantes,que ha tenido que marcar, ya sea argentinos o uruguayos (claramente nacionalidades de su preferencia), ya que no se ha sentido atraido por contrarios de otra nacionalidad. Claramente no tiene ningùn respeto al Fair Pla"
+        },
+        {
+          "type": "false_positive",
+          "idx": 962,
+          "gold": 0,
+          "prob": 0.5482838208702864,
+          "text": "¡Hola Dodo! ¿Cómo has estado? Vengo para rogarte que reconsideres tu posición en este artículo ya que se ha cambiado bastante. Muchas Gracias"
+        },
+        {
+          "type": "false_negative",
+          "idx": 3949,
+          "gold": 1,
+          "prob": 0.19233745648758468,
+          "text": "not: system üyeleri orospu çocuğunun tekidir... hepsi birer sikilmiş bir ittir!!! onlar ibnedir. onların sakalında hayır yok hepsi sik kafalıdır... ermeni ordusu katil pezevenk ve birer piçtirler. hepsinin soyu sikilmiştir..."
+        },
+        {
+          "type": "false_negative",
+          "idx": 3962,
+          "gold": 1,
+          "prob": 0.19274746385446181,
+          "text": "Gündelik polemikler bir ansiklopedi sayfasında bulunmaması gereken şeylerdir. Onur Öymen in 10 Kasım 2009 da Meclis te yaptığı konuşmada örnek verdiği Dersim İsyanının çarpıtılarak kendisine karşı kullanılması durumu ansiklopedik bilgi değildir, taraflıdır ve kötü niyetlidir. AKP ve Atatürk düşmanları konuyu istismar ediyor."
+        },
+        {
+          "type": "false_negative",
+          "idx": 3968,
+          "gold": 1,
+          "prob": 0.2000224450822213,
+          "text": "Siz ve sizin gibiler vikipedi için büyük bir kötülük. Biz hukukçular gibi kendinize yapılmış haksızlıkları bile sindiremiyorsanız, bırakın efendim bırakın gidin."
+        },
+        {
+          "type": "false_negative",
+          "idx": 2423,
+          "gold": 1,
+          "prob": 0.20401836235198456,
+          "text": "attenzione questo va in giro a modificare a cazzo varie voci! dategli una controllatina, io ho corretto sistema immunitario intanto!! ciao!"
+        },
+        {
+          "type": "false_negative",
+          "idx": 3941,
+          "gold": 1,
+          "prob": 0.2106428898456691,
+          "text": "Saidferid e itaat edeceksin. Yoksa başın gidecek. Başın bir ipten değil, daha feci bir şekilde kulak içi yağlarını silip atan bir kurşundan akacak. Bugün on olduk. Yüz olduğumuzda bekle bizi. Siz, Amerikancı köpeklar, azılı işbirlikçiler, Amerikan salatası yiyerek ve Amerikan filmleri izleyerek daldığınız hayal aleminden bir başka hayal alemine, Wikiye geçerken gerçek aleme donunuzdan kopmuş kanlı"
+        },
+        {
+          "type": "false_negative",
+          "idx": 3957,
+          "gold": 1,
+          "prob": 0.24434880472787632,
+          "text": "Başlığıın tarafsız ve objektif olarak Ermeni Soykırım İddiaları olarak değiştirilmesi gerekir. Ve ermenilerin olaya açıklık getirmeye yanaşmadıkları belirtilmelidir. Delillerinin olmadığı, düzmece deliller hazırladıkları bastırılarak yazılmalıdır. bu yaptıkları orsbu cocukluğudur."
+        },
+        {
+          "type": "false_negative",
+          "idx": 2360,
+          "gold": 1,
+          "prob": 0.2443970669950176,
+          "text": "Che vergogna che siete ! Pagine e pagine in varie edizioni per questa merda e manco una in inglese per non so quanti veri ARTISTI musicali italiani. E poi venite a parlare di recentismo, ma fatevi in culo !"
+        },
+        {
+          "type": "false_negative",
+          "idx": 2344,
+          "gold": 1,
+          "prob": 0.24836112673745137,
+          "text": "ok potevi chiederela cancellazione dell account senza vandalizzare, verrai bloccato ma le tue castronerie vandaliche rimarrano indelebiliNico48 (msg)"
+        }
+      ]
+    },
+    {
+      "model": "DistilBERT-ml",
+      "examples": [
+        {
+          "type": "false_positive",
+          "idx": 215,
+          "gold": 0,
+          "prob": 0.9853770136833191,
+          "text": "hola mi personje preferido es Tomas.aunque tenga cara de gilipuerta me gusta¿xk? pos pork se mete con los idiotas de bloo y mac jajaja"
+        },
+        {
+          "type": "false_positive",
+          "idx": 2821,
+          "gold": 0,
+          "prob": 0.9833015203475952,
+          "text": "Selamlar. Looked at lightly, it is the grandest and silliest cinematic carnival to come along in quite some time: a lurching journey through one filmmaker s personal fun house. On a more serious level, its investigation into the power of movies pierces a void from which you can hear the screams of a ravenous demon whose appetites can never be slaked. ; This sinful pleasure is a fresh triumph for L"
+        },
+        {
+          "type": "false_positive",
+          "idx": 1939,
+          "gold": 0,
+          "prob": 0.9824913144111633,
+          "text": "vergogna tre volte vergogna !!! sei un essere moralmente riprovevole hai devastato questa pagina i tuoi crimini saranno smascherati avrai la punizione che meriti IL BLOCCO INFINITO per uso criminoso di sockpuppet e devastazione di pagina VERGOGNATI !"
+        },
+        {
+          "type": "false_positive",
+          "idx": 1746,
+          "gold": 0,
+          "prob": 0.9751513600349426,
+          "text": "E che cacchio, non faccio in tempo a tutorare una giovine fanciulla che già si scopre essere probabilmente un utenza shemale e me la zappate infinito!!! ~]]"
+        },
+        {
+          "type": "false_positive",
+          "idx": 2103,
+          "gold": 0,
+          "prob": 0.97324138879776,
+          "text": "ALL ATTENZIONE DELLE COOPERATIVE DI TRIESTE...XKè NEI VOSTRI SUPERMERCATI NN SI POSSONO PORTARE I CANI?? C è UNA LEGGE KE NN LO VIETA PIù...EPPURE SOLO NEI VOSTRI SUPER...è VIETATO!!!! IO, KE DA 30 ANNI VENGO DA VOI A LASCIARE I MIEI SOLDI...E PARECCHI,MIA MADRE ZIE CUGINI AMICHE TUTTE RIGOROSAMENTE SOCIE, SONO MOLTO DISPIACIUTE X QST. CHI PORTA UN CANE IN QUALSIASI POSTO è RESPONSABILE DI TUTTO Q"
+        },
+        {
+          "type": "false_positive",
+          "idx": 1397,
+          "gold": 0,
+          "prob": 0.9711558222770691,
+          "text": "NO ora basta non dirmi sempre che ho torto io. Wiki la fate fnzionare come volete. Se sono io che cancello tutto dite che è vandalismo se lo fanno gliatri sono le regole, A me sta cosa puzza."
+        },
+        {
+          "type": "false_positive",
+          "idx": 770,
+          "gold": 0,
+          "prob": 0.967334508895874,
+          "text": "Soy una cagueta, si señora, ya sabes que lo reconozco. Pero me fiaré de ti. Mañana a ver si te los azuleo toditos."
+        },
+        {
+          "type": "false_positive",
+          "idx": 1284,
+          "gold": 0,
+          "prob": 0.9670554995536804,
+          "text": "PER L ULTMA VOLTA: LA VOCE è RIFERITA AL PERSONAGGIO LETTERARIO, E NEI LIBRI COLIANDRO AFFERMA DI ESSERE DI SINISTRA. LEGGETEVI I LIBRI E SMETTETELA DI CORREGGERE LA VOCE!"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1073,
+          "gold": 1,
+          "prob": 0.013262401334941387,
+          "text": "Perdón, nos tomas por idiotas?. Ningún artículo (menos un AB) se borra por estar desactualizado. Si sigues insistiendo y amenazando, no me quedará otra que pedir el bloqueo de todas las IPs has usado y el usuario que registraste o pedir la semiprotección de la página de discusión para que dejes de molestar de una buena vez. The Game, HHH (are you talking to me?) 03:12 5 feb 2009 (UTC)"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1181,
+          "gold": 1,
+          "prob": 0.01573776639997959,
+          "text": "Le agradezco retire la palabra Mierda del enlace de su firma, para mucha gente puede ser ofensivo. Gracias por su atención. Edmenb ( Mensajes ) 17:02 13 feb 2009 (UTC)"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1093,
+          "gold": 1,
+          "prob": 0.01647440902888775,
+          "text": "(Deshecha la edición 40396304 de 79.156.204.127 (disc.) por ahora no es un dato relevante y que se pueda contrastar) ¿Cómo que no es un dato contrastable?. ¿Acaso el enlace donde se ha publicado el artículo (por llamarlo de alguna forma) en El Mundo no es contrastación más que suficiente. Quien quiera que hiciera la revisión desde 79.156.204.127 fue bastante más comedido con la actualización que m"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1083,
+          "gold": 1,
+          "prob": 0.016552571207284927,
+          "text": "Veo una estupidez seguir discutiendo por eso, la verdad. Quizás HHH tendría que haber colocado la plantilla , o no se. El caso es que fue un error y no creo que lo vuelva a repetir. Saludos, 16:25 30 jun 2008 (UTC)"
+        },
+        {
+          "type": "false_negative",
+          "idx": 2451,
+          "gold": 1,
+          "prob": 0.016563238576054573,
+          "text": "Non me ne fotto dell accessibilità, evidentemente non mi sono spiegato bene. Ho scritto che quello è lo standard utilizzato per quei template, che si può sempre modificare (con una sola modifica) se non rispettasse i requisiti di accessibilità. Io sono disponibile, non avevo intenzione di scavalcarti nella decisione (che credevo non fondamentale). Continuiamo sulla pagina di discussione della fict"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1211,
+          "gold": 1,
+          "prob": 0.016808941960334778,
+          "text": "Posamí me suena mejor «Este artículo no ha podido borrarse» ¿Hacemos una guerra de ediciones? No jodas, qué pereza. ;-) Buena idea lo de invitar a editarlo de nuevo. Sanbec ✉ 17:48 31 mar, 2005 (CEST)"
+        },
+        {
+          "type": "false_negative",
+          "idx": 1098,
+          "gold": 1,
+          "prob": 0.017121709883213043,
+          "text": "Stivi, a mi no me molestó que no me incluyeras en esa maldita sección, a mi lo que me molestó era que te repartieras el artículo con Sonik, y yo no acudí a Gustavo, yo hablé con mi amigo y de entre los muchos temas de conversación salió este. Juanrra (Entra a criticar o cotillear) 15:40 18 abr 2007 (CEST)"
+        },
+        {
+          "type": "false_negative",
+          "idx": 2304,
+          "gold": 1,
+          "prob": 0.018029481172561646,
+          "text": "Non è questo il tema della discussione. Mi stai prendendo per il culo come al solito. Inutile discutere con te. Xinstalker (msg)"
+        }
+      ]
+    }
+  ],
+  "total_runtime_s": 188.73
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>haku — agentic AI systems</title>
+<meta name="description" content="haku: MSc student in Agentic AI Systems at The Hong Kong Polytechnic University. Two projects, one shipped, one proposed.">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top">haku</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button" aria-pressed="false">
+      <span class="theme-dot" aria-hidden="true"></span><span id="theme-label">Dark</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="home-h">
+    <div class="wrap">
+      <p class="eyebrow">MSc Agentic AI Systems · PolyU</p>
+      <h1 id="home-h">haku</h1>
+      <p class="tagline">I build small systems that learn, and I care more about
+        why they fail than how large they are.</p>
+      <p class="hero-links">
+        <a href="#projects">See the projects</a>
+        <span aria-hidden="true">·</span>
+        <a href="#about">Read the background</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 id="about-h"><span class="num">01</span>About</h2>
+
+      <div class="block">
+        <h3 class="label">Education</h3>
+        <p class="lead">MSc in Agentic AI Systems, The Hong Kong Polytechnic
+          University — 2026 to 2027.</p>
+      </div>
+
+      <div class="block">
+        <h3 class="label">Interests</h3>
+        <p>I came into this programme from the engineering side, and the part I
+          actually enjoy is what happens after the demo works: finding out why it
+          stops working when the data changes. At the moment that means retrieval
+          systems whose answers can be checked against the passage they came from,
+          evaluation that still means something on a different dataset, and the
+          unglamorous work of making a model usable by someone who did not write
+          it.</p>
+        <p>Everything I know about this came from coursework I had to debug
+          myself, so I trust a small experiment I can rerun more than a large
+          claim I cannot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h"><span class="num">02</span>Projects</h2>
+
+      <article class="project" aria-labelledby="p1-h">
+        <div class="p-head">
+          <span class="chip">Coursework</span>
+          <h3 id="p1-h">Four models, one split — Digits4000 and multilingual toxicity</h3>
+        </div>
+        <p class="p-purpose">Compare four models that are usually described
+          separately, under one fixed protocol: a hand-written NumPy MLP, a PyTorch
+          CNN, a fine-tuned multilingual DistilBERT, and a TF-IDF + logistic
+          regression baseline. Stratified 80/20 split, test set read once.</p>
+        <p class="p-role"><span class="label-inline">My contribution.</span>
+          Implemented the MLP and its backward pass by hand, with no automatic
+          differentiation. Built two independently seeded corruption suites
+          (Gaussian noise σ = 0.2, rotation ±15°) so that the CNN and the MLP
+          could be compared on inputs neither had seen. Ran the DistilBERT
+          fine-tuning and the threshold protocol, and wrote the report.</p>
+
+        <button class="disclose" type="button" aria-expanded="true" aria-controls="p1-more">
+          <span class="disclose-sign" aria-hidden="true">−</span>
+          <span class="disclose-text">Result and detail</span>
+        </button>
+        <div class="p-more" id="p1-more">
+          <table class="scores">
+            <caption class="sr-only">Test accuracy of the four models</caption>
+            <thead>
+              <tr><th scope="col">Model</th><th scope="col">Clean</th><th scope="col">Noisy</th><th scope="col">Rotated</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">NumPy MLP</th><td>0.9275</td><td>0.9145</td><td>0.9070</td></tr>
+              <tr><th scope="row">PyTorch CNN</th><td>0.9600</td><td>0.9415</td><td>0.9440</td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Test accuracy on 2000 images. Both models were evaluated
+            on the same corrupted sets and neither was retrained on corrupted
+            data, so the drop is a measure of robustness, not of extra training.</p>
+          <p>The ranking was the boring part. What mattered was that the two
+            models degraded differently — the CNN lost 0.0185 to pixel noise and
+            0.0160 to rotation, the MLP lost 0.0130 and 0.0205 — so "more robust"
+            depends on which corruption you mean.</p>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p2-h">
+        <div class="p-head">
+          <span class="chip chip-proposed">Proposed</span>
+          <h3 id="p2-h">Citation-first Q&amp;A over course notes</h3>
+        </div>
+        <p class="p-purpose">Answer questions over my own lecture PDFs so that
+          every sentence in the answer points at the passage it came from. The
+          point is to be able to check the answer, not to trust it.</p>
+        <p class="p-role"><span class="label-inline">Planned contribution.</span>
+          Chunking by section heading, hybrid BM25 + dense retrieval, and a
+          40-question evaluation set built from questions I have actually asked.
+          Measure answer correctness and citation precision with and without
+          retrieval, so that the retrieval step has to justify itself.</p>
+
+        <button class="disclose" type="button" aria-expanded="true" aria-controls="p2-more">
+          <span class="disclose-sign" aria-hidden="true">−</span>
+          <span class="disclose-text">Why it is proposed, not built</span>
+        </button>
+        <div class="p-more" id="p2-more">
+          <p>Because the evaluation set is the part I have not finished. A
+            retrieval demo without a fixed question set only shows that retrieval
+            returns something; it cannot show that the returned passage is the one
+            that supports the answer. I would rather label this as a proposal than
+            ship a demo that cannot fail.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h"><span class="num">03</span>Contact</h2>
+      <p class="lead"><a class="mail" href="mailto:2654808130@qq.com">2654808130@qq.com</a></p>
+      <p class="muted">Email is the only channel I monitor. I answer questions
+        about the projects above, and I am happy to be told that a number in them
+        is wrong.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <span>haku</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>V0</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span>2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
